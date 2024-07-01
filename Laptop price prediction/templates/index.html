@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Price Predictor</title>
+</head>
+<body>
+    <h1>Laptop Price Predictor</h1>
+    <form action="/predict" method="post">
+        <label for="company">Brand:</label>
+        <select name="company" id="company">
+            {% for option in company_options %}
+                <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select><br><br>
+        
+        <label for="lap_type">Type:</label>
+        <select name="lap_type" id="lap_type">
+            {% for option in lap_type_options %}
+                <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select><br><br>
+        
+        <label for="ram">RAM (in GB):</label>
+        <select name="ram" id="ram">
+            <option value="2">2</option>
+            <option value="4">4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <!-- Add more RAM options if needed -->
+        </select><br><br>
+        
+        <!-- Add input fields and dropdowns for other options similarly -->
+        
+        <label for="resolution">Screen Resolution:</label>
+        <select name="resolution" id="resolution">
+            {% for option in resolution_options %}
+                <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select><br><br>
+        
+        <label for="cpu">CPU:</label>
+        <select name="cpu" id="cpu">
+            {% for option in cpu_options %}
+                <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select><br><br>
+        
+        <label for="hdd">HDD (in GB):</label>
+        <select name="hdd" id="hdd">
+            <option value="0">0</option>
+            <option value="128">128</option>
+            <!-- Add more HDD options if needed -->
+        </select><br><br>
+        
+        <label for="ssd">SSD (in GB):</label>
+        <select name="ssd" id="ssd">
+            <option value="0">0</option>
+            <option value="8">8</option>
+            <!-- Add more SSD options if needed -->
+        </select><br><br>
+        
+        <label for="gpu">GPU:</label>
+        <select name="gpu" id="gpu">
+            {% for option in gpu_options %}
+                <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select><br><br>
+        
+        <label for="os">OS:</label>
+        <select name="os" id="os">
+            {% for option in os_options %}
+                <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select><br><br>
+        
+        <button type="submit">Predict Price</button>
+    </form>
+</body>
+</html>
